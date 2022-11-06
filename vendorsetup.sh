@@ -50,6 +50,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_TARGET_DEVICES="evergo,evergreen,everpal,opal"
 	export TARGET_DEVICE_ALT="evergo,evergreen,opal"
 
+	# Flashlight
+	export OF_FL_PATH1="/system/flashlight"
+
 	# R11.1 Settings
 	export FOX_VERSION="R11.1"
 	export OF_MAINTAINER="Sushrut1101"
