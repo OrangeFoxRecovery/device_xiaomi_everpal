@@ -145,6 +145,9 @@ TW_INCLUDE_PYTHON := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# This device does not support fastboot boot, do *NOT* remove!
+TW_NO_FASTBOOT_BOOT := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
