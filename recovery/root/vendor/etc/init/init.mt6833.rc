@@ -14,19 +14,23 @@ on boot
 
 on property:hwservicemanager.ready=true
     start teei_daemon
+    start keymaster-4-1-beanpod
 
 on property:ro.crypto.state=unsupported
     stop teei_daemon
+    stop keymaster-4-1-beanpod
     stop servicemanager
     stop hwservicemanager
 
 on property:ro.crypto.state=unencrypted
     stop teei_daemon
+    stop keymaster-4-1-beanpod
     stop servicemanager
     stop hwservicemanager
 
 on property:twrp.decrypt.done=true
     stop teei_daemon
+    stop keymaster-4-1-beanpod
     stop servicemanager
     stop hwservicemanager
 
@@ -40,5 +44,12 @@ service keystore_auth /system/bin/keystore_auth
 service keystore /system/bin/keystore /tmp/misc/keystore
     user root
     group root drmrpc readproc log
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-1-beanpod /vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
+    user root
+    group root drmrpc
+    oneshot    
     disabled
     seclabel u:r:recovery:s0
