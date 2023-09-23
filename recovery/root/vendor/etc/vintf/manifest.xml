@@ -1,0 +1,6 @@
+<manifest version="4.0" type="device" target-level="5">
+    <sepolicy>
+        <version>31.0</version>
+    </sepolicy>
+    <kernel target-level="5"/>
+</manifest>
