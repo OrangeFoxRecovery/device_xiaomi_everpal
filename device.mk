@@ -53,3 +53,7 @@ PRODUCT_PACKAGES += \
 # Kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)-kernel/Image.gz:kernel
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833
