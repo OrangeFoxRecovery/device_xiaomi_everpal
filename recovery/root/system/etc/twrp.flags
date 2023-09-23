@@ -1,0 +1,67 @@
+#
+# Android fstab file.
+#
+#<mnt_point>			<type>		<device>						<mnt_flags and options>
+
+# Boot
+/boot				emmc		/dev/block/by-name/boot					flags=display="Boot";backup=1;flashimg=1;slotselect
+
+# Internal Storage
+/storage			f2fs		/data/media/0						flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
+
+# VBMeta
+/vbmeta				emmc		/dev/block/by-name/vbmeta				flags=display="VBMeta";flashimg=1
+/vbmeta_system			emmc		/dev/block/by-name/vbmeta_system			flags=display="VBMeta System";flashimg=1;slotselect
+/vbmeta_vendor			emmc		/dev/block/by-name/vbmeta_vendor			flags=display="VBMeta Vendor";flashimg=1;slotselect
+
+# DTBO
+/dtbo				emmc		/dev/block/by-name/dtbo					flags=display="DTBO";backup=1;flashimg=1
+/odmdtbo			emmc		/dev/block/by-name/odmdtbo
+
+# Persistent
+/protect_f			ext4		/dev/block/by-name/protect1				flags=display="Protect_f"
+/protect_s			ext4		/dev/block/by-name/protect2				flags=display="Protect_s"
+/nvdata				ext4		/dev/block/by-name/nvdata				flags=display="Nvdata"
+/nvcfg				ext4		/dev/block/by-name/nvcfg				flags=display="Nvcfg"
+/persist			ext4		/dev/block/by-name/persist				flags=display="Persist"
+/persist_image			emmc		/dev/block/by-name/persist				flags=display="Persist";backup=1;flashimg=1
+/frp				emmc		/dev/block/by-name/frp					flags=display="FRP";backup=1;flashimg=1
+/nvram				emmc		/dev/block/by-name/nvram				flags=display="NVRAM"
+/proinfo			emmc		/dev/block/by-name/proinfo				flags=display="Proinfo"
+/expdb				emmc		/dev/block/by-name/expdb				flags=display="Expdb"
+/seccfg				emmc		/dev/block/by-name/seccfg				flags=display="Seccfg"
+
+# Misc
+/para				emmc		/dev/block/by-name/para					flags=display="Para"
+/boot_para			emmc		/dev/block/by-name/boot_para
+
+# Splash
+/logo				emmc		/dev/block/by-name/logo					flags=display="Logo";backup=1;flashimg=1
+
+# Firmware
+/bootloader			emmc		/dev/block/by-name/lk					flags=display="Bootloader"
+/bootloader2			emmc		/dev/block/by-name/lk2					flags=display="Bootloader2"
+/tee1				emmc		/dev/block/by-name/tee1					flags=display="TEE_1"
+/tee2				emmc		/dev/block/by-name/tee2					flags=display="TEE_2"
+/scp1				emmc		/dev/block/by-name/scp1
+/scp2				emmc		/dev/block/by-name/scp2
+/sspm_1				emmc		/dev/block/by-name/sspm_1
+/sspm_2				emmc		/dev/block/by-name/sspm_2
+/dpm_1				emmc		/dev/block/by-name/dpm_1
+/dpm_2				emmc		/dev/block/by-name/dpm_2
+/mcupm_1			emmc		/dev/block/by-name/mcupm_1
+/mcupm_2			emmc		/dev/block/by-name/mcupm_2
+/efuse				emmc		/dev/block/by-name/efuse
+/md1img				emmc		/dev/block/by-name/md1img				flags=display="Modem (md1img)";backup=1;flashimg=1
+/md1dsp				emmc		/dev/block/by-name/md1dsp				flags=display="Md1dsp"
+/md1arm7			emmc		/dev/block/by-name/md1arm7				flags=display="Md1arm7"
+/md3img				emmc		/dev/block/by-name/md3img				flags=display="Md3img"
+/gz1				emmc		/dev/block/by-name/gz1
+/gz2				emmc		/dev/block/by-name/gz2
+/spmfw				emmc		/dev/block/by-name/spmfw
+/pi_img				emmc		/dev/block/by-name/pi_img
+/otp				emmc		/dev/block/by-name/otp
+
+# External Storage
+/sdcard1			vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0		flags=display="MicroSD Card";storage;wipeingui;removable
+/usb_otg			vfat		/dev/block/sda1		/dev/block/sdd			flags=display="USB-Storage";storage;wipeingui;removable

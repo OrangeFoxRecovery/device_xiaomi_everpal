@@ -1,0 +1,21 @@
+#
+# Android fstab file.
+#
+# <src>						<mnt_point>			<type>		<mnt_flags and options>													<fs_mgr_flags>
+
+# Logical Partitions
+system						/system				ext4		ro															wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-developer-gsi.avbpubkey:/avb/r-developer-gsi.avbpubkey:/avb/s-developer-gsi.avbpubkey,slotselect
+system_dlkm					/system_dlkm			ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+system_ext					/system_ext			ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+vendor						/vendor				ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+vendor_dlkm					/vendor_dlkm			ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+odm						/odm				ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+odm_dlkm					/odm_dlkm			ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+product						/product			ext4		ro															wait,avb,logical,first_stage_mount,slotselect
+
+# Data
+/dev/block/by-name/metadata			/metadata			ext4		noatime,nosuid,nodev,discard,data=journal,commit=1									wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata			/data				f2fs		noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt		wait,check,formattable,reservedsize=128m,latemount,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
+
+# Misc
+/dev/block/by-name/misc				/misc				emmc		defaults														defaults

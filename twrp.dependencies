@@ -1,0 +1,7 @@
+[
+	{
+		"remote"	:	"github",
+		"repository"	:	"xiaomi-mt6833-dev/device_xiaomi_everpal-kernel",
+		"target_path"	:	"device/xiaomi/everpal-kernel"
+	}
+]
