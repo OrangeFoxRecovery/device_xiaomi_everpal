@@ -57,3 +57,7 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833
+
+# USB
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.sys.usb.storage.type=mtp
