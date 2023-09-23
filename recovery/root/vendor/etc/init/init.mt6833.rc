@@ -13,16 +13,20 @@ on boot
     start health-hal-2-1
 
 on property:hwservicemanager.ready=true
+    start teei_daemon
 
 on property:ro.crypto.state=unsupported
+    stop teei_daemon
     stop servicemanager
     stop hwservicemanager
 
 on property:ro.crypto.state=unencrypted
+    stop teei_daemon
     stop servicemanager
     stop hwservicemanager
 
 on property:twrp.decrypt.done=true
+    stop teei_daemon
     stop servicemanager
     stop hwservicemanager
 

@@ -58,6 +58,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833
 
+# TEE
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.mtk_microtrust_tee_support=1 \
+    ro.vendor.mtk_svp_on_mtee_support=1 \
+    ro.vendor.mtk_tee_gp_support=1
+
 # USB
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.sys.usb.storage.type=mtp
