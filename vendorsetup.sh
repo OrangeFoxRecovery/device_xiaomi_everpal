@@ -61,7 +61,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		if [ -n "${DEST}" ]; then
 			if [ ! -e ${DEST} ]; then
 				echo "Downloading the Latest Release of Magisk..."
-				local LATEST_MAGISK_URL=$(curl -sL https://api.github.com/repos/topjohnwu/Magisk/releases/latest | grep "browser_download_url" | grep "Magisk." | cut -d : -f 2,3 | tr -d '"')
+				local LATEST_MAGISK_URL=$(curl -sL https://api.github.com/repos/topjohnwu/Magisk/releases/latest | grep "browser_download_url" | grep ".apk" | cut -d : -f 2,3 | tr -d '"')
 				mkdir -p $(dirname ${DEST})
 				wget -q ${LATEST_MAGISK_URL} -O ${DEST} || wget ${LATEST_MAGISK_URL} -O ${DEST}
 				local RCODE=$?
