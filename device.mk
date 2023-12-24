@@ -80,10 +80,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.kmsetkey=beanpod
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833
-
 # TEE
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.mtk_microtrust_tee_support=1 \
