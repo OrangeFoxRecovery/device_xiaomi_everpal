@@ -152,6 +152,9 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# TWRP (Refresh Rate)
+TW_FRAMERATE := 90
+
 # This device does not support fastboot boot, do *NOT* remove!
 TW_NO_FASTBOOT_BOOT := true
 
